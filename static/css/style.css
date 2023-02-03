@@ -1,0 +1,1347 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    background: transparent;
+    font-weight: normal;
+    text-decoration: none;
+    outline: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+ol,
+ul {
+    list-style: none;
+}
+del {
+    text-decoration: line-through;
+}
+body {
+    font-family: "SansRegular", Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    color: #000;
+    overflow-x: hidden;
+    min-width: 320px;
+    font-weight: 500;
+}
+input,
+textarea,
+select {
+    font-family: "SansRegular", Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+img {
+    display: block;
+    width: 100%;
+}
+.thumb {
+    display: block;
+}
+.thumb img {
+    display: block;
+    width: 100%;
+}
+a {
+    cursor: pointer;
+    text-decoration: none !important;
+}
+p {
+    line-height: 1.6em;
+    font-size: 16px;
+    font-family: "SansRegular", Arial;
+    font-weight: 500;
+    color: #000;
+}
+.blur {
+    backdrop-filter: blur(10px) !important;
+    background: #000 !important;
+}
+@font-face {
+    font-family: "Gordita Regular";
+    src: url("../assets/fonts/DMSans-Regular.woff2") format("woff2"),
+        url("../assets/fonts/Gordita-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Gordita Bold";
+    src: url("../assets/fonts/Gordita-Bold.woff2") format("woff2"),
+        url("../assets/fonts/Gordita-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Gordita Medium";
+    src: url("../assets/fonts/Gordita-Medium.woff2") format("woff2"),
+        url("../assets/fonts/Gordita-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "SansBold";
+    src: url("../assets/fonts/DMSans-Bold.woff2") format("woff2"),
+        url("../assets/fonts/DMSans-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "SansMedium";
+    src: url("../assets/fonts/DMSans-Medium.woff2") format("woff2"),
+        url("../assets/fonts/DMSans-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "SansRegular";
+    src: url("../assets/fonts/DMSans-Regular.woff2") format("woff2"),
+        url("../assets/fonts/DMSans-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@keyframes fade {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes pulseouter {
+    0% {
+        transform: scale(2);
+    }
+
+    100% {
+        transform: scale(1.4);
+    }
+}
+@keyframes pulseinner {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.08);
+    }
+}
+html {
+    scroll-behavior: smooth;
+}
+.popup-content {
+    border: none !important;
+    background: none !important;
+}
+.active {
+    color: #0fa76f;
+}
+.wrapper {
+    width: 85%;
+    margin: 0 auto;
+}
+/* Landing_page style starts */
+/* (#home) style starts */
+#home header {
+    position: fixed;
+    top: 0;
+    height: 80px;
+    z-index: 200;
+    background: #fff;
+}
+#home header div.wrapper {
+    height: 100%;
+}
+#home header div.wrapper nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+#home header div.wrapper nav h1 {
+    width: 50%;
+}
+#home header div.wrapper nav h1 a {
+    width: 30%;
+    display: block;
+}
+#home header div.wrapper nav h1 a img {
+    display: block;
+    width: 100%;
+}
+#home header div.wrapper nav div.right {
+    width: 40%;
+}
+#home header div.wrapper nav div.right ul {
+    display: flex;
+    justify-content: space-between;
+}
+#home header div.wrapper nav div.right ul li a:hover {
+    color: #0fa76f;
+}
+#home header div.wrapper nav div.right ul li a.active {
+    color: #0fa76f;
+}
+#home header div.wrapper nav div.right ul li a {
+    font-size: 18px;
+    font-family: "Gordita Medium";
+    color: #666666;
+}
+/* hamburger style starts */
+#home header div.wrapper nav div.right div.hamburger {
+    display: none;
+}
+#home header div.wrapper nav div.right div.hamburger img {
+    width: 100%;
+    display: block;
+}
+#home header div.wrapper nav div.right div.menu {
+    display: none;
+    z-index: 1000000;
+    font-family: "SansBold";
+    font-size: 0.8em;
+    width: 100%;
+    background: #f1f1f1;
+    position: absolute;
+    text-align: center;
+    font-size: 12px;
+}
+#home header div.wrapper nav div.right div.menu ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    list-style-image: none;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    right: 60%;
+    background: #ffffff;
+    z-index: 1000;
+}
+#home header div.wrapper nav div.right div.menu ul li {
+    display: block;
+    padding: 15px 0 15px 0;
+    width: 100%;
+}
+#home div.wrapper nav header nav.right div.menu ul li a:hover {
+    color: #0fa76f;
+}
+/* (#spotlight) style starts */
+#home #spotlight {
+    background: linear-gradient(to left, #f4f1e9 0%, #ffffff 100%);
+    display: flex;
+    position: relative;
+    padding: 180px 0 100px 100px;
+}
+#home #spotlight div.video-player {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    left: 0%;
+    top: 0%;
+    width: 100vw;
+    height: -webkit-fill-available;
+    background: rgb(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+#home #spotlight div.video-player span {
+    position: absolute;
+    top: 18%;
+    width: 2.5%;
+    right: 17%;
+}
+#home #spotlight div.video-player span img {
+    display: block;
+    width: 100%;
+}
+#home #spotlight div.video-player video {
+    width: 60%;
+    display: flex;
+    margin: 10% auto;
+}
+#home #spotlight div.left {
+    width: 45%;
+}
+#home #spotlight div.left h1 {
+    font-size: 50px;
+    font-family: "SansBold";
+    margin-bottom: 15px;
+}
+#home #spotlight div.left h1 i {
+    font-family: "SansBold";
+    color: #009262;
+}
+#home #spotlight div.left p {
+    font-size: 18px;
+    color: #747474;
+    width: 80%;
+}
+#home #spotlight div.left div.location {
+    border: 1px solid#eeeeee;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    padding: 6px 12px;
+    background: #ffff;
+    margin: 40px 0;
+}
+#home #spotlight div.left div.location span {
+    width: 20px;
+}
+#home #spotlight div.left div.location span img {
+    display: block;
+    width: 100%;
+}
+#home #spotlight div.left div.location h4 {
+    font-family: "SansMedium";
+    font-size: 15px;
+    display: inline;
+}
+#home #spotlight div.left button {
+    background: #0fa76f;
+    font-family: "SansRegular";
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 6px;
+    padding: 10px 20px;
+    color: #ffffff;
+}
+#home #spotlight div.left button span.videobutton {
+    display: block;
+    width: 100px;
+}
+#home #spotlight div.left button img {
+    margin-left: 5px;
+    width: 30%;
+    display: block;
+}
+#home #spotlight div.right {
+    width: 50%;
+}
+#home #spotlight div.right div.image-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 63%;
+}
+#home #spotlight div.right div.image-container img {
+    width: 100%;
+    display: block;
+}
+#home #spotlight div.right div.button-container {
+    position: absolute;
+    right: 24%;
+    top: 42%;
+    width: 11%;
+    cursor: pointer;
+}
+#home #spotlight div.right div.button-container .build-button {
+    border-radius: 50%;
+    width: 80%;
+    position: relative;
+    cursor: pointer;
+    z-index: 9;
+}
+#home #spotlight div.right div.button-container .build-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    transition: 2s;
+    background-color: #0fa76f;
+    opacity: 0.4;
+    z-index: -1;
+    animation: pulseouter 2s infinite;
+}
+#home #spotlight div.right div.button-container .build-button img {
+    display: block;
+    width: 100%;
+}
+/* (#amenities) style starts */
+#amenities {
+    padding: 100px 0;
+    animation: 600ms ease-in-out 0ms 1 normal none running fade;
+    @keyframes fade {
+        0% {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}
+#amenities div.wrapper h1 {
+    font-size: 32px;
+    font-family: "SansBold";
+    text-align: center;
+    position: relative;
+    margin-bottom: 30px;
+    letter-spacing: 0.02em;
+}
+#amenities div.wrapper h1 small {
+    display: inline-block;
+    color: #62af84;
+    position: relative;
+}
+#amenities div.wrapper h1 small img {
+    position: absolute;
+    bottom: -15%;
+    left: 10%;
+}
+#amenities div.wrapper p {
+    color: #747474;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    margin-bottom: 50px;
+}
+#amenities div.wrapper div.gallery ul.photo-booth {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-radius: 6px;
+}
+#amenities div.wrapper div.gallery ul.photo-booth li {
+    width: 30%;
+    padding: 8px;
+    border-radius: 8px;
+    background: #f9f9f9;
+    position: relative;
+    animation: 600ms ease-in-out 0ms 1 normal none running fade;
+
+    @keyframes fade {
+        0% {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}
+#amenities div.wrapper div.gallery ul.photo-booth li:hover span.name {
+    display: none;
+}
+#amenities div.wrapper div.gallery ul.photo-booth li:hover span.hover {
+    display: block;
+    animation: 600ms ease-in-out 0ms 1 normal none running fade;
+}
+#amenities div.wrapper div.gallery ul.photo-booth li img {
+    width: 100%;
+    display: block;
+}
+#amenities div.wrapper div.gallery ul.photo-booth li span.count {
+    background: #00000066;
+    padding: 8px 14px;
+    position: absolute;
+    top: 15px;
+    border-radius: 15px;
+    right: 20px;
+    display: block;
+}
+#amenities div.wrapper div.gallery ul.photo-booth li span.count small {
+    color: #fff;
+    font-size: 11px;
+    display: block;
+}
+#amenities div.wrapper div.gallery ul.photo-booth li span.name {
+    font-size: 14px;
+    font-family: "SansMedium";
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    color: #fff;
+}
+#amenities div.wrapper div.gallery ul.photo-booth li span.hover {
+    display: none;
+    font-size: 14px;
+    font-family: "SansMedium";
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    animation: 600ms ease-in-out 0ms 1 normal none running fade;
+
+    @keyframes fade {
+        0% {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}
+/* (#events) style starts */
+#events {
+    background: #fcfbf8;
+    padding: 100px 0;
+    animation: 300ms ease-in-out 0ms 1 normal none running fade;
+}
+#events div.wrapper h1.head {
+    font-size: 32px;
+    font-family: "SansBold";
+    text-align: center;
+    position: relative;
+    margin-bottom: 30px;
+    letter-spacing: 0.02em;
+}
+#events div.wrapper h1.head small {
+    display: inline-block;
+    color: #62af84;
+    position: relative;
+    font-size: 32px;
+}
+#events div.wrapper h1.head small img {
+    width: 100%;
+    display: block;
+}
+#events div.wrapper>p {
+    color: #747474;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    width: 75%;
+    margin: 0 auto 30px auto;
+}
+#events div.wrapper ul.cards li {
+    display: flex;
+    justify-content: space-between;
+    background: #fff6f9;
+    border-radius: 12px;
+    padding: 50px;
+    border: 1px solid pink;
+    margin-bottom: 25px;
+}
+#events div.wrapper ul.cards li:nth-child(2) {
+    display: flex;
+    background: #f1fcff;
+    flex-direction: row-reverse;
+    border: 1px solid#c8efef;
+}
+#events div.wrapper ul.cards li:nth-child(3) {
+    background: #fff6f9;
+    margin-bottom: 50px;
+    border: 1px solid#d4d4d4;
+}
+#events div.wrapper ul.cards li div.left {
+    width: 50%;
+}
+#events div.wrapper ul.cards li div.left h2 {
+    font-family: "SansBold";
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #000;
+}
+#events div.wrapper ul.cards li div.left small {
+    font-family: "SansMedium";
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #adadad;
+    display: block;
+}
+#events div.wrapper ul.cards li div.left p {
+    font-size: 15px;
+    color: #747474;
+    margin-bottom: 25%;
+}
+#events div.wrapper ul.cards li div.left div.bottom {
+    display: flex;
+    justify-content: space-between;
+}
+#events div.wrapper ul.cards li div.left div.bottom button {
+    background: #0fa76f;
+    padding: 0 10px;
+    height: 40px;
+    margin-top: 50px;
+    border-radius: 8px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    width: 110px;
+}
+#events div.wrapper ul.cards li div.left div.bottom button span.button-name {
+    font-family: "SansMedium";
+    font-size: 14px;
+    color: #fff;
+    display: contents;
+}
+#events div.wrapper ul.cards li div.left div.bottom button img {
+    width: 20px;
+}
+#events div.wrapper ul.cards li div.left div.bottom div.event-number img {
+    display: block;
+    width: 100%;
+}
+#events div.wrapper ul.cards li div.right {
+    width: 45%;
+}
+#events div.wrapper ul.cards li div.right div.ImageContainer {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+#events div.wrapper ul.cards li div.right div.ImageContainer img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+#events div.wrapper button.foot {
+    width: 100%;
+}
+#events div.wrapper button span.button-view-name {
+    background: #0fa76f;
+    padding: 12px 18px;
+    border-radius: 8px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 220px;
+    font-family: "SansBold";
+    font-size: 16px;
+}
+#events div.wrapper button span.button-view-name img {
+    width: 15%;
+}
+/* (#revenue) style starts */
+#revenue {
+    padding: 100px 0;
+    animation: 300ms ease-in-out 0ms 1 normal none running fade;
+}
+#revenue div.wrapper h1 {
+    font-size: 32px;
+    font-family: "SansBold";
+    text-align: center;
+    position: relative;
+    margin-bottom: 30px;
+    letter-spacing: 0.02em;
+}
+#revenue div.wrapper h1 span {
+    display: inline-block;
+    color: #62af84;
+    position: relative;
+}
+#revenue div.wrapper p {
+    color: #747474;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    width: 80%;
+    margin: 0 auto;
+}
+#revenue div.wrapper ul.widget {
+    margin-top: 20px;
+    display: flex;
+}
+#revenue div.wrapper ul.widget li {
+    width: 24%;
+    padding: 25px;
+    border: 1px solid#eeeeee;
+    border-radius: 8px;
+    transform: scale(0.9);
+    transition: all 0.2s ease-in-out 0s;
+}
+#revenue div.wrapper ul.widget li:hover {
+    transform: scale(1);
+    background: linear-gradient(90deg, #0fa76f 2%, #21c487 97.59%);
+}
+#revenue div.wrapper ul.widget li:hover .green {
+    display: none;
+}
+#revenue div.wrapper ul.widget li:hover .white {
+    display: block;
+}
+#revenue div.wrapper ul.widget li:hover h3 {
+    color: #fff;
+}
+#revenue div.wrapper ul.widget li:hover span {
+    color: #fff;
+}
+#revenue div.wrapper ul.widget li div.green {
+    width: 15%;
+}
+#revenue div.wrapper ul.widget li div.green img {
+    display: block;
+    width: 100%;
+}
+#revenue div.wrapper ul.widget li div.white {
+    width: 15%;
+    display: none;
+}
+#revenue div.wrapper ul.widget li div.white img {
+    display: block;
+    width: 100%;
+}
+#revenue div.wrapper ul.widget li h3 {
+    font-size: 18px;
+    margin: 10px 0 20px;
+    font-family: "SansBold";
+    color: #000;
+}
+#revenue div.wrapper ul.widget li span {
+    font-size: 14px;
+    line-height: 1.6em;
+    font-family: "Gordita Regular";
+    color: #747474;
+}
+/* (#footer) style starts */
+footer {
+    background: #000;
+    padding: 40px 0;
+}
+footer div.wrapper {
+    width: 100%;
+}
+footer div.wrapper div.caption-container {
+    width: 12%;
+    margin: 0 auto 20px auto;
+}
+footer div.wrapper div.caption-container img {
+    width: 100%;
+    display: block;
+}
+footer div.wrapper h3 {
+    font-size: 100%;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+footer div.wrapper a.logo {
+    display: flex;
+    flex-direction: column;
+    width: 4%;
+    margin: 0 auto 30px auto;
+}
+footer div.wrapper a.logo img {
+    width: 100%;
+    display: block;
+}
+footer div.wrapper div.line {
+    border: 1px solid#303030;
+    margin-bottom: 20px;
+}
+footer div.wrapper div.bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 15%;
+    margin: 0 auto;
+}
+footer div.wrapper div.bottom a {
+    width: 12%;
+}
+footer div.wrapper div.bottom a:nth-child(2) {
+    width: 7%;
+}
+footer div.wrapper div.bottom a img {
+    display: block;
+    width: 100%;
+}
+/* Landing_page style starts */
+#login {
+    height: 100vh;
+    display: flex;
+}
+#login div.left {
+    background: url("../assets/images/loginbg.png");
+    background-size: cover;
+    width: 50%;
+}
+#login div.left div.content {
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 60%;
+}
+#login div.left div.content h2 {
+    font-size: 28px;
+    font-family: "SansMedium";
+    color: #fff;
+}
+#login div.left div.content p {
+    font-size: 16px;
+    font-family: "SansRegular";
+    color: #fff;
+}
+#login div.right {
+    width: 50%;
+    padding: 40px 100px 0 100px;
+}
+#login div.right div.logo {
+    width: 12%;
+    margin: 0 auto 25px auto;
+}
+#login div.right div.logo img {
+    width: 100%;
+    display: block;
+}
+#login div.right div.text-logo {
+    width: 33%;
+    margin: 0 auto 15px auto;
+}
+#login div.right div.text-logo img {
+    width: 100%;
+    display: block;
+}
+#login div.right h4 {
+    font-size: 17px;
+    font-family: "SansMedium";
+    text-align: center;
+    margin-bottom: 15px;
+}
+#login div.right h4 span {
+    color: #0fa76f;
+}
+#login div.right p {
+    font-size: 18px;
+    text-align: center;
+    color: #747474;
+    margin-bottom: 30px;
+}
+#login div.right form label {
+    font-size: 14px;
+    color: #747474;
+}
+#login div.right form>input {
+    width: 100%;
+    border-radius: 6px;
+    background: #F4F5FC;
+    margin-bottom: 15px;
+    padding: 15px 20px;
+}
+#login div.right form div.password {
+    position: relative;
+}
+#login div.right form div.password input {
+    width: 100%;
+    border-radius: 6px;
+    background: #F4F5FC;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+}
+#login div.right form div.password div.eye-open {
+    width: 5%;
+    position: absolute;
+    top: 25%;
+    right: 2%;
+}
+#login div.right form div.password div.eye-open img {
+    display: block;
+    width: 100%;
+}
+#login div.right form div.password div.eye-hide {
+    display: none;
+    width: 5%;
+    position: absolute;
+    top: 20%;
+    right: 2%;
+}
+#login div.right form div.password div.eye-hide img {
+    display: block;
+    width: 100%;
+}
+#login div.right form div.checkbox {
+    display: flex;
+    gap: 12px;
+}
+#login div.right form div.checkbox input {
+    accent-color: #0fa76f;
+}
+#login div.right form div.checkbox span {
+    font-family: "SansMedium";
+}
+#login div.right form button {
+    background: #247d3d;
+    padding: 15px 22px;
+    width: 100%;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    margin-top: 50px;
+    color: #fff;
+    font-size: 14px;
+    font-family: "Gordita Regular";
+    cursor: pointer;
+}
+
+/* responsive */
+@media all and (max-width: 1380px) {
+    #home header div.wrapper nav div.right {
+        width: 50%;
+    }
+    #home #spotlight div.left div.location {
+        width: 68%;
+    }
+    #home #spotlight div.video-player video {
+        width: 60%;
+        display: flex;
+        margin: 12% auto;
+    }
+    #home #spotlight div.video-player span {
+        top: 19%;
+    }
+    #home #spotlight div.right div.button-container {
+        position: absolute;
+        right: 26%;
+        top: 50%;
+        width: 12%;
+    }
+    #home #spotlight div.right div.image-container img {
+        height: 560px;
+    }
+    #login div.right p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+}
+@media all and (max-width: 1280px) {
+    #home header div.wrapper nav h1 a {
+        width: 40%;
+    }
+    #home header div.wrapper nav div.right ul li a {
+        font-size: 16px;
+        font-family: "Gordita Medium";
+        color: #666666;
+    }
+    #home #spotlight div.video-player video {
+        margin: 17% auto;
+    }
+    #home #spotlight div.video-player span {
+        top: 25%;
+    }
+    #home #spotlight div.left h1 {
+        font-size: 42px;
+    }
+    #home #spotlight div.left p {
+        font-size: 16px;
+    }
+    #home #spotlight div.left div.location {
+        width: 75%;
+    }
+    #home #spotlight div.left div.location h4 {
+
+        font-size: 14px;
+    }
+    #home #spotlight {
+        padding: 160px 0 100px 100px;
+    }
+    #events div.wrapper div.cards {
+        padding: 30px;
+    }
+}
+
+@media all and (max-width: 1080px) {
+    #home #spotlight {
+        padding: 80px 0 80px 100px;
+    }
+    #home #spotlight div.video-player video {
+        margin: 20% auto;
+    }
+    #home #spotlight div.video-player span {
+        top: 32%;
+    }
+    #home header div.wrapper nav div.right ul li a {
+        font-size: 15px;
+    }
+    #home #spotlight div.left h1 {
+        font-size: 38px;
+    }
+    #home #spotlight div.left p {
+        font-size: 85%;
+    }
+    #home #spotlight div.left div.location {
+        width: 90%;
+    }
+    #home #spotlight div.right div.image-container img {
+        height: 500px;
+    }
+    #home #spotlight div.right div.button-container {
+        right: 21%;
+        width: 13%;
+    }
+    #home #spotlight div.right div.image-container {
+        right: 0%;
+        bottom: 0;
+        width: 55%;
+    }
+    #revenue div.wrapper ul.widget {
+        flex-wrap: wrap;
+    }
+    #revenue div.wrapper ul.widget li {
+        width: 33%;
+    }
+    #login div.left div.content h2 {
+        font-size: 24px;
+    }
+    #login div.left div.content p {
+        font-size: 14px;
+    }
+    #login div.left div.content {
+        padding-top: 80%;
+    }
+    #login {
+        flex-direction: column-reverse;
+        height: 100%;
+    }
+    #login div.right {
+        width: 100%;
+    }
+    #login div.right form button {
+        margin-bottom: 20px;
+    }
+    #login div.left {
+        width: 100%;
+        height: 100vh;
+    }
+    #login div.left div.content {
+        height: 100vh;
+        padding-top: 55%;
+    }
+}
+
+@media all and (max-width: 980px) {
+    #amenities {
+        padding: 70px 0;
+    }
+    #amenities div.wrapper div.gallery ul.photo-booth li span.count {
+        padding: 6px 12px;
+    }
+    #amenities div.wrapper div.gallery ul.photo-booth li {
+        width: 48%;
+    }
+    #events {
+        padding: 70px 0;
+    }
+    #events div.wrapper ul.cards li {
+        flex-direction: column-reverse;
+    }
+    #events div.wrapper ul.cards li:nth-child(2) {
+        flex-direction: column-reverse;
+    }
+    #events div.wrapper ul.cards li div.right {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    #events div.wrapper ul.cards li div.left {
+        width: 100%;
+    }
+    #home #spotlight {
+        flex-direction: column-reverse;
+        padding-left: 0;
+    }
+    #home #spotlight div.video-player video {
+        margin: 25% auto;
+        width: 85%;
+    }
+    #home #spotlight div.video-player span {
+        top: 20%;
+        width: 4%;
+        right: 2%;
+    }
+    #home header div.wrapper nav h1 a {
+        width: 50%;
+    }
+    #home header div.wrapper nav div.right {
+        width: 58%;
+    }
+    #home header div.wrapper nav div.right ul li a {
+        font-size: 13px;
+    }
+    #home #spotlight div.right div.image-container {
+        position: static;
+        width: 60%;
+        margin: 0 auto;
+    }
+    #home #spotlight div.right {
+        width: 100%;
+    }
+    #home #spotlight div.right div.button-container {
+        width: 16%;
+        top: 23%;
+        left: 42%;
+    }
+    #home #spotlight {
+        margin-left: 0;
+    }
+    #home #spotlight div.left {
+        width: 100%;
+    }
+    br {
+        display: none;
+    }
+    #home #spotlight div.left h1 {
+        font-size: 36px;
+        text-align: center;
+        margin-top: 30px;
+    }
+    #home #spotlight div.left p {
+        text-align: center;
+        width: 70%;
+        margin: 0 auto;
+    }
+    #home #spotlight div.left div.location {
+        width: 48%;
+        margin: 40px auto;
+    }
+    #home #spotlight div.left button {
+        margin: 0 auto;
+    }
+    #home #spotlight div.right div.image-container img {
+        height: 400px;
+    }
+    #revenue div.wrapper ul.widget li {
+        width: 50%;
+    }
+    footer div.wrapper div.caption-container {
+        width: 20%;
+    }
+    footer div.wrapper a.logo {
+        width: 7%;
+    }
+    footer div.wrapper div.bottom a {
+        width: 14%;
+    }
+    footer div.wrapper div.bottom a:nth-child(2) {
+        width: 9%;
+    }
+    footer div.wrapper div.bottom {
+        width: 18%;
+    }
+}
+
+@media all and (max-width: 768px) {
+    #home #spotlight div.video-player video {
+        width: 90%;
+        margin: 35% auto;
+    }
+    #home #spotlight div.video-player span {
+        top: 21%;
+        width: 4%;
+        right: 5%;
+    }
+    #home #spotlight div.right div.image-container img {
+        height: 350px;
+    }
+    #home header div.wrapper nav div.right ul {
+        display: none;
+    }
+    #home header div.wrapper nav div.right div.hamburger {
+        display: block;
+        width: 40%;
+        margin-left: 80%;
+    }
+    #home header div.wrapper nav h1 {
+        width: 100%;
+    }
+    #home header div.wrapper nav h1 a {
+        width: 60%;
+    }
+    #home #spotlight div.left div.location {
+        width: 56%;
+    }
+}
+
+@media all and (max-width: 640px) {
+    #home #spotlight div.video-player span {
+        top: 12%;
+        width: 6%;
+        right: 6%;
+    }
+    #home #spotlight div.video-player video {
+        margin: 30% auto;
+    }
+    #home #spotlight div.right div.image-container img {
+        height: 300px;
+    }
+    #home #spotlight div.right div.image-container {
+        width: 70%;
+    }
+    #home #spotlight div.left h1 {
+        font-size: 34px;
+    }
+    #home #spotlight div.left div.location {
+        width: 75%;
+    }
+    #amenities div.wrapper div.gallery ul.photo-booth li {
+        width: 100%;
+    }
+    #revenue div.wrapper p {
+        font-size: 16px;
+    }
+    #revenue div.wrapper ul.widget li {
+        width: 100%;
+    }
+    #revenue div.wrapper ul.widget li div.green {
+        width: 10%;
+    }
+    #revenue div.wrapper ul.widget li div.white {
+        width: 10%;
+    }
+    footer div.wrapper div.caption-container {
+        width: 30%;
+    }
+    footer div.wrapper a.logo {
+        width: 10%;
+    }
+    footer div.wrapper div.bottom {
+        width: 28%;
+    }
+    #login div.right div.logo {
+        width: 20%;
+        margin-bottom: 20px;
+    }
+    #login div.right div.text-logo {
+        width: 50%;
+    }
+    #login div.right h4 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    #login div.right p {
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+    #login div.right form>input {
+        padding: 12px 20px;
+    }
+    #login div.right form div.password input {
+        padding: 12px 20px;
+    }
+    #login div.right form button {
+        margin: 30px 0;
+    }
+    #login div.left div.content {
+        padding-top: 80%;
+    }
+}
+
+@media all and (max-width: 480px) {
+    #home header div.wrapper nav h1 a {
+        width: 75%;
+    }
+    #home header div.wrapper nav div.right div.hamburger {
+        width: 55%;
+        margin-left: 70%;
+    }
+    #home #spotlight div.video-player video {
+        margin: 45% auto;
+        width: 100%;
+    }
+    #home #spotlight div.video-player span {
+        top: 14%;
+        width: 8%;
+        right: 1%;
+    }
+    #home #spotlight div.right div.image-container img {
+        height: 260px;
+    }
+    #home #spotlight div.right div.button-container {
+        width: 25%;
+        top: 17%;
+        left: 38%;
+    }
+    #home #spotlight div.right div.image-container {
+        width: 80%;
+    }
+    #home #spotlight div.left h1 {
+        font-size: 26px;
+    }
+    #home #spotlight div.left p {
+        width: 80%;
+    }
+    #home #spotlight div.left div.location span {
+        width: 40px;
+    }
+    #home #spotlight div.left div.location h4 {
+        margin-left: 10px;
+    }
+    #amenities div.wrapper p {
+        font-size: 16px;
+    }
+    #events div.wrapper ul.cards li div.left div.bottom div.event-number {
+        display: none;
+    }
+    #events div.wrapper ul.cards li {
+        padding: 30px;
+    }
+    #events div.wrapper>p {
+        width: 100%;
+        font-size: 16px;
+    }
+    #revenue div.wrapper p {
+        width: 100%;
+    }
+    footer {
+        padding-bottom: 20px;
+    }
+    footer div.wrapper div.bottom {
+        width: 30%;
+    }
+    footer div.wrapper a.logo {
+        width: 12%;
+    }
+    footer div.wrapper div.caption-container {
+        width: 45%;
+    }
+    footer div.wrapper div.bottom {
+        width: 40%;
+    }
+    footer div.wrapper div.bottom a:nth-child(2) {
+        width: 8%;
+    }
+    #login div.right {
+        padding: 30px 40px 0 30px;
+    }
+    #login div.left div.content {
+        padding-top: 100%;
+    }
+    #login div.left div.content p {
+        font-size: 13px;
+    }
+}
+
+@media all and (max-width: 360px) {
+    #home #spotlight div.left h1 {
+        font-size: 24px;
+    }
+    #home #spotlight div.video-player video {
+        margin: 50% auto;
+    }
+    #events div.wrapper ul.cards li div.left h2 {
+        font-size: 19px;
+    }
+    footer div.wrapper a.logo {
+        width: 15%;
+    }
+}
