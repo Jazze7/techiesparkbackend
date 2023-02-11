@@ -1,13 +1,15 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
+from users.manager import UserManager
 
-# Create your models here.
-class Customer(models.Model):
-    name=models.CharField(max_length=155)
-    place=models.CharField(max_length=155)
-    roll_no=models.IntegerField()
-    email=models.EmailField(max_length=120)
 
-    def __str__(self):
-        return self.name
-    
+class User(AbstractUser):
+    username=None
+    # name=models.CharField(max_length=20)
+    phone_number=models.CharField(max_length=15,unique=True)
+    is_verified = models.BooleanField(default=False)
+    otp=models.CharField(max_length=6)
 
+    USERNAME_FIELD = 'phone_number'
+    REQUIRED_FIELDS =[]
+    objects=UserManager()

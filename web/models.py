@@ -11,3 +11,13 @@ class Event(models.Model):
     def __str__(self):
         return self.title
  
+class MomentGallery(models.Model):
+    title=models.ForeignKey("web.Event",on_delete=models.CASCADE)
+    image=models.ImageField(upload_to='Moment_gallery/')
+
+    class Meta:
+        verbose_name_plural="MomentGallery"
+        db_table = "Gallery"
+
+    def __str__(self):
+        return str( self.id)

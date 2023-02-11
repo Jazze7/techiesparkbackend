@@ -23,14 +23,14 @@
             To aid the development of a strong startup ecosystem in our state,
             Talrop has designed Techies park
         </p>
-        <form action="" method="post">
+        <form action="/users/login/" method="post">
             {% csrf_token %}
-            <label for="">Username</label><br />
+            <label for="">Phone Number</label><br />
             <input
                 type="text"
                 value=""
-                placeholder="Username"
-                name="username"
+                placeholder="Phone Number"
+                name="phone_number"
                 required
             />
             <label for="">Password</label><br />
@@ -62,7 +62,11 @@
                 <input type="checkbox" name="" id="" />
                 <span>Keep me signed in</span>
             </div>
-
+            {% if message %}
+            <small>{{message}}</small>
+            {% else %}
+            <p class="register">Don't have account  <a href="{% url 'users:create' %}">Register</a></p>
+            {% endif %}
             <button type="submit">Log In</button>
         </form>
     </div>

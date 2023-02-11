@@ -1,14 +1,13 @@
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent.parent
 
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-qw5q8!7@)0g=+^$5_29+77j)y^v_$cyx+=n!v_g6dj5-t5)a*+'
 
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 INSTALLED_APPS = [
     'registration',
@@ -59,14 +58,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'techies_park.wsgi.application'
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -94,11 +91,11 @@ REST_FRAMEWORK = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-
     "http://localhost:3000",
     "http://127.0.0.1:3000",
 ]
 
+AUTH_USER_MODEL = 'users.User'
 
 LANGUAGE_CODE = 'en-us'
 
@@ -111,9 +108,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
+
 MEDIA_ROOT = BASE_DIR / "media"
 MEDIA_URL = '/media/'
-
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -122,11 +119,10 @@ ACCOUNT_ACTIVATION_DAYS = 7
 SITE_ID = 1
 REGISTRATION_AUTO_LOGIN = False
 LOGOUT_REDIRECT_URL = "/"
-# LOGIN_URL = "/"
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-# ACCOUNT_EMAIL_VERIFICATION = "none"
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+LOGIN_REDIRECT_URL="/"
 
+# email settings
 EMAIL_HOST="smtp.gmail.com"
 EMAIL_HOST_USER="talroptest@gmail.com"
 EMAIL_HOST_PASSWORD="ljtyplatmaoymuuf"

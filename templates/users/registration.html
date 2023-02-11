@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="container">
+    <h1 style="text-align: center;">Register here</h1>
+    <form action="{% url 'users:create' %}" method="post"  style="display: flex;flex-direction: column; width: 60%;margin: 0 auto;">
+        {% csrf_token %}
+        <label for="{{form.first_name.id_for_label}}">{{form.first_name.label}}</label>
+        {{form.first_name}}
+        {% for error in form.first_name.errors %}
+        <small style="color: red;">{{ error }}</small>
+        {% endfor %}
+        <label for="{{form.phone_number.id_for_label}}">{{form.phone_number.label}}</label>
+        {{form.phone_number}}
+        {% for error in form.phone_number.errors %}
+        <small style="color: red;">{{ error }}</small>
+         {% endfor %}
+        <label for="{{form.password.id_for_label}}">{{form.password.label}}</label>
+        {{form.password}}
+        {% for error in form.password.errors %}
+        <small style="color: red;">{{ error }}</small>
+        {% endfor %}
+        <input class="btn btn-primary mt-3" type="submit" value="Submit"  />
+    </form>
+</div>
+
+{% endblock %}

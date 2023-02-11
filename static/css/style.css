@@ -874,6 +874,7 @@ footer div.wrapper div.bottom a img {
 #login div.right form div.checkbox {
     display: flex;
     gap: 12px;
+    margin-bottom: 30px;
 }
 #login div.right form div.checkbox input {
     accent-color: #0fa76f;
@@ -888,7 +889,6 @@ footer div.wrapper div.bottom a img {
     text-align: center;
     border: none;
     border-radius: 5px;
-    margin-top: 50px;
     color: #fff;
     font-size: 14px;
     font-family: "Gordita Regular";

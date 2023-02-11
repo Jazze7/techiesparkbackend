@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="container">
+  <h4>Verify OTP</h4>
+  <form action="{% url 'users:otp' %}" method="post"  style="display: flex;flex-direction: column; width: 60%;margin: 0 auto;">
+    {% csrf_token %}
+    <input type="number" name="phone_number" value="{{phone_number}}" id="" style="display: none;"/>
+    <label>Enter OTP</label>
+    <input type="number" name="otp" id="" class="form-control">
+    <small style="color: red;">{{message}}</small>
+    <button type="submit" class="btn btn-primary">Verify</button>
+  </form>
+</div>
+{% endblock %}
